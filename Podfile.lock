@@ -1,0 +1,66 @@
+PODS:
+  - Bolts (1.7.0):
+    - Bolts/AppLinks (= 1.7.0)
+    - Bolts/Tasks (= 1.7.0)
+  - Bolts/AppLinks (1.7.0):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.7.0)
+  - QMChatViewController (0.3.8):
+    - QMChatViewController/Categories (= 0.3.8)
+    - QMChatViewController/KeyboardViewController (= 0.3.8)
+    - QMChatViewController/Protocols (= 0.3.8)
+    - QMChatViewController/Sections (= 0.3.8)
+    - QMChatViewController/Utils (= 0.3.8)
+    - QMChatViewController/Views (= 0.3.8)
+    - QuickBlox (>= 2.0)
+    - SDWebImage (~> 3.6)
+    - TTTAttributedLabel (> 1.13)
+  - QMChatViewController/Categories (0.3.8):
+    - QuickBlox (>= 2.0)
+    - SDWebImage (~> 3.6)
+    - TTTAttributedLabel (> 1.13)
+  - QMChatViewController/KeyboardViewController (0.3.8):
+    - QuickBlox (>= 2.0)
+    - SDWebImage (~> 3.6)
+    - TTTAttributedLabel (> 1.13)
+  - QMChatViewController/Protocols (0.3.8):
+    - QuickBlox (>= 2.0)
+    - SDWebImage (~> 3.6)
+    - TTTAttributedLabel (> 1.13)
+  - QMChatViewController/Sections (0.3.8):
+    - QuickBlox (>= 2.0)
+    - SDWebImage (~> 3.6)
+    - TTTAttributedLabel (> 1.13)
+  - QMChatViewController/Utils (0.3.8):
+    - QuickBlox (>= 2.0)
+    - SDWebImage (~> 3.6)
+    - TTTAttributedLabel (> 1.13)
+  - QMChatViewController/Views (0.3.8):
+    - QMChatViewController/Categories
+    - QMChatViewController/Protocols
+    - QuickBlox (>= 2.0)
+    - SDWebImage (~> 3.6)
+    - TTTAttributedLabel (> 1.13)
+  - QMServices (0.4):
+    - Bolts (>= 1.5.0)
+    - QuickBlox (>= 2.6.5)
+  - QuickBlox (2.7.2)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
+  - TTTAttributedLabel (2.0.0)
+
+DEPENDENCIES:
+  - QMChatViewController (~> 0.3.7)
+  - QMServices (= 0.4)
+  - QuickBlox (= 2.7.2)
+
+SPEC CHECKSUMS:
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
+  QMChatViewController: 0bc5d9af5464488b492eb1ec25d037dec213c3a3
+  QMServices: d394e72f3202206088fd18d2b6a507c597143e22
+  QuickBlox: 99d8b2db8df393e6b38e601a9d3ed2d0dd4b4db3
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
+
+COCOAPODS: 0.39.0
