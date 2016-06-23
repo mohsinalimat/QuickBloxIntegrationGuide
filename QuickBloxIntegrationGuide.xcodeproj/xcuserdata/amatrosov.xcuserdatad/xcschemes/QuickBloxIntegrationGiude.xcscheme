@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4A55C8B1D196EC50089FB23"
-               BuildableName = "QuickBloxIntegrationGiude.app"
-               BlueprintName = "QuickBloxIntegrationGiude"
-               ReferencedContainer = "container:QuickBloxIntegrationGiude.xcodeproj">
+               BuildableName = "QuickBloxIntegrationGuide.app"
+               BlueprintName = "QuickBloxIntegrationGuide"
+               ReferencedContainer = "container:QuickBloxIntegrationGuide.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4A55C8B1D196EC50089FB23"
-            BuildableName = "QuickBloxIntegrationGiude.app"
-            BlueprintName = "QuickBloxIntegrationGiude"
-            ReferencedContainer = "container:QuickBloxIntegrationGiude.xcodeproj">
+            BuildableName = "QuickBloxIntegrationGuide.app"
+            BlueprintName = "QuickBloxIntegrationGuide"
+            ReferencedContainer = "container:QuickBloxIntegrationGuide.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4A55C8B1D196EC50089FB23"
-            BuildableName = "QuickBloxIntegrationGiude.app"
-            BlueprintName = "QuickBloxIntegrationGiude"
-            ReferencedContainer = "container:QuickBloxIntegrationGiude.xcodeproj">
+            BuildableName = "QuickBloxIntegrationGuide.app"
+            BlueprintName = "QuickBloxIntegrationGuide"
+            ReferencedContainer = "container:QuickBloxIntegrationGuide.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4A55C8B1D196EC50089FB23"
-            BuildableName = "QuickBloxIntegrationGiude.app"
-            BlueprintName = "QuickBloxIntegrationGiude"
-            ReferencedContainer = "container:QuickBloxIntegrationGiude.xcodeproj">
+            BuildableName = "QuickBloxIntegrationGuide.app"
+            BlueprintName = "QuickBloxIntegrationGuide"
+            ReferencedContainer = "container:QuickBloxIntegrationGuide.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
