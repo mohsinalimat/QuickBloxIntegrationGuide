@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="108" y="400"/>
         </scene>
-        <!--Start View Controller-->
+        <!--Test-->
         <scene sceneID="qrV-Hb-qSA">
             <objects>
-                <viewController id="N9s-z0-yKd" customClass="StartViewController" customModule="QuickBloxIntegrationGiude" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N9s-z0-yKd" customClass="StartViewController" customModule="QuickBloxIntegrationGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vkg-1I-gQ5"/>
                         <viewControllerLayoutGuide type="bottom" id="R8e-FT-Mig"/>
@@ -35,10 +35,12 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFV-OB-D5L">
                                 <rect key="frame" x="180" y="95" width="240" height="30"/>
+                                <color key="backgroundColor" red="0.1058823529" green="0.1215686275" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="00K-hJ-sXa"/>
                                     <constraint firstAttribute="height" constant="30" id="xOm-Oj-H5a"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Login as first user">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
@@ -48,10 +50,12 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lO0-90-NoH">
                                 <rect key="frame" x="180" y="146" width="240" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1cN-4b-sKs"/>
                                     <constraint firstAttribute="width" constant="240" id="VwV-fC-T3J"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <state key="normal" title="Login as second user">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
@@ -60,7 +64,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.31384440870383923" green="0.45840363144798779" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lO0-90-NoH" firstAttribute="top" secondItem="fFV-OB-D5L" secondAttribute="bottom" constant="21" id="CRU-6q-pBn"/>
                             <constraint firstItem="fFV-OB-D5L" firstAttribute="centerX" secondItem="Mz6-BM-ywD" secondAttribute="centerX" id="IOE-kS-Xim"/>
@@ -68,19 +72,19 @@
                             <constraint firstItem="fFV-OB-D5L" firstAttribute="top" secondItem="vkg-1I-gQ5" secondAttribute="bottom" constant="31" id="ty3-aX-vCE"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="J6D-Qr-Phf"/>
+                    <navigationItem key="navigationItem" title="Test" id="gfO-aX-W72"/>
                     <connections>
-                        <segue destination="UMO-sL-2ZM" kind="show" identifier="QIGSegueShowNewChat" id="ZiF-kM-1kI"/>
+                        <segue destination="UMO-sL-2ZM" kind="show" identifier="QIGSegueShowSelectUserToChat" id="ZiF-kM-1kI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OIx-Sq-0YX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="830" y="400"/>
         </scene>
-        <!--View Controller-->
+        <!--Select user-->
         <scene sceneID="exV-RH-YGj">
             <objects>
-                <viewController id="UMO-sL-2ZM" sceneMemberID="viewController">
+                <viewController id="UMO-sL-2ZM" customClass="SelectUserToChatViewController" customModule="QuickBloxIntegrationGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z1i-6E-le7"/>
                         <viewControllerLayoutGuide type="bottom" id="NQR-bH-ANM"/>
@@ -88,8 +92,39 @@
                     <view key="view" contentMode="scaleToFill" id="1Oq-0T-cu5">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yt2-mo-Zie">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="AcS-7I-Yav">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AcS-7I-Yav" id="upy-lu-Pcc">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UMO-sL-2ZM" id="3Jf-r1-T7H"/>
+                                    <outlet property="delegate" destination="UMO-sL-2ZM" id="ZBa-IU-vZa"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yt2-mo-Zie" firstAttribute="top" secondItem="1Oq-0T-cu5" secondAttribute="top" id="4W9-dy-Goi"/>
+                            <constraint firstAttribute="trailing" secondItem="yt2-mo-Zie" secondAttribute="trailing" id="TOi-60-5Jc"/>
+                            <constraint firstItem="yt2-mo-Zie" firstAttribute="leading" secondItem="1Oq-0T-cu5" secondAttribute="leading" id="WYi-zP-EnV"/>
+                            <constraint firstItem="NQR-bH-ANM" firstAttribute="top" secondItem="yt2-mo-Zie" secondAttribute="bottom" id="r3y-FJ-b55"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Select user" id="JS6-8f-Zn5"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="usersTableView" destination="yt2-mo-Zie" id="CRm-6Y-DSo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZc-Dv-R67" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

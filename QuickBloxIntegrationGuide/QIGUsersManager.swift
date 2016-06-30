@@ -30,4 +30,11 @@ class QIGUsersManager
     userDefaults.setObject(objectToStore, forKey: Constants.QuickBloxUserId)
     userDefaults.synchronize()
   }
+  
+  func quickBloxUserId() -> UInt
+  {
+    let userId = userDefaults.objectForKey(Constants.QuickBloxUserId)
+    
+    return userId as! UInt
+  }
 }

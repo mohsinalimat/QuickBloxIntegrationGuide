@@ -18,6 +18,8 @@
 		E4BAC7C61D1C58C600497C04 /* QIGUsersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BAC7C11D1C58C600497C04 /* QIGUsersManager.swift */; };
 		E4BAC7C71D1C58C600497C04 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BAC7C21D1C58C600497C04 /* StartViewController.swift */; };
 		E4BAC7CA1D1C58F300497C04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4BAC7C81D1C58F300497C04 /* Main.storyboard */; };
+		E4FE50D71D25214F00A724CD /* SelectUserToChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FE50D61D25214F00A724CD /* SelectUserToChatViewController.swift */; };
+		E4FE50D91D253D1100A724CD /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FE50D81D253D1100A724CD /* ChatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		E4BAC7C11D1C58C600497C04 /* QIGUsersManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QIGUsersManager.swift; sourceTree = "<group>"; };
 		E4BAC7C21D1C58C600497C04 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		E4BAC7C91D1C58F300497C04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4FE50D61D25214F00A724CD /* SelectUserToChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectUserToChatViewController.swift; sourceTree = "<group>"; };
+		E4FE50D81D253D1100A724CD /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,20 +84,62 @@
 		E4BAC7A61D1C588800497C04 /* QuickBloxIntegrationGuide */ = {
 			isa = PBXGroup;
 			children = (
-				E4BAC7BE1D1C58C600497C04 /* QIGApplicationManager.swift */,
-				E4BAC7BF1D1C58C600497C04 /* QIGQuickBloxManager.swift */,
-				E4BAC7C01D1C58C600497C04 /* QIGServiceLayer.swift */,
-				E4BAC7C11D1C58C600497C04 /* QIGUsersManager.swift */,
-				E4BAC7C21D1C58C600497C04 /* StartViewController.swift */,
-				E4BAC7BC1D1C58BF00497C04 /* QIGConsts.swift */,
+				E4FE50D41D2520BE00A724CD /* ViewControllers */,
+				E4FE50D31D2520AA00A724CD /* Consts */,
+				E4FE50D21D25206000A724CD /* Services layer */,
+				E4FE50D11D25204700A724CD /* Application layer */,
+				E4FE50D51D2520D100A724CD /* Storyboards */,
 				E4BAC7BB1D1C58B500497C04 /* Bridging-Header.h */,
-				E4BAC7B91D1C58AC00497C04 /* AppDelegate.swift */,
-				E4BAC7C81D1C58F300497C04 /* Main.storyboard */,
 				E4BAC7AE1D1C588800497C04 /* Assets.xcassets */,
-				E4BAC7B01D1C588800497C04 /* LaunchScreen.storyboard */,
 				E4BAC7B31D1C588800497C04 /* Info.plist */,
 			);
 			path = QuickBloxIntegrationGuide;
+			sourceTree = "<group>";
+		};
+		E4FE50D11D25204700A724CD /* Application layer */ = {
+			isa = PBXGroup;
+			children = (
+				E4BAC7B91D1C58AC00497C04 /* AppDelegate.swift */,
+				E4BAC7BE1D1C58C600497C04 /* QIGApplicationManager.swift */,
+			);
+			name = "Application layer";
+			sourceTree = "<group>";
+		};
+		E4FE50D21D25206000A724CD /* Services layer */ = {
+			isa = PBXGroup;
+			children = (
+				E4BAC7C01D1C58C600497C04 /* QIGServiceLayer.swift */,
+				E4BAC7C11D1C58C600497C04 /* QIGUsersManager.swift */,
+				E4BAC7BF1D1C58C600497C04 /* QIGQuickBloxManager.swift */,
+			);
+			name = "Services layer";
+			sourceTree = "<group>";
+		};
+		E4FE50D31D2520AA00A724CD /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				E4BAC7BC1D1C58BF00497C04 /* QIGConsts.swift */,
+			);
+			name = Consts;
+			sourceTree = "<group>";
+		};
+		E4FE50D41D2520BE00A724CD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4BAC7C21D1C58C600497C04 /* StartViewController.swift */,
+				E4FE50D61D25214F00A724CD /* SelectUserToChatViewController.swift */,
+				E4FE50D81D253D1100A724CD /* ChatViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E4FE50D51D2520D100A724CD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E4BAC7C81D1C58F300497C04 /* Main.storyboard */,
+				E4BAC7B01D1C588800497C04 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 		F89E069C535C7157BDA9B0D2 /* Pods */ = {
@@ -227,12 +273,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4FE50D71D25214F00A724CD /* SelectUserToChatViewController.swift in Sources */,
 				E4BAC7C61D1C58C600497C04 /* QIGUsersManager.swift in Sources */,
 				E4BAC7C71D1C58C600497C04 /* StartViewController.swift in Sources */,
 				E4BAC7C51D1C58C600497C04 /* QIGServiceLayer.swift in Sources */,
 				E4BAC7BA1D1C58AC00497C04 /* AppDelegate.swift in Sources */,
 				E4BAC7C31D1C58C600497C04 /* QIGApplicationManager.swift in Sources */,
 				E4BAC7C41D1C58C600497C04 /* QIGQuickBloxManager.swift in Sources */,
+				E4FE50D91D253D1100A724CD /* ChatViewController.swift in Sources */,
 				E4BAC7BD1D1C58BF00497C04 /* QIGConsts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

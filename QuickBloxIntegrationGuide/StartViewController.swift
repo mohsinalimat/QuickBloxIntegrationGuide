@@ -10,17 +10,38 @@ import Foundation
 
 class StartViewController : UIViewController
 {
+  struct Constants {
+    
+    struct Segue {
+      static let segueShowChats = "QIGSegueShowSelectUserToChat"
+    }
+    
+    struct UserCredentional {
+      static let login1 = "matrosovtest"
+      static let password1 = "abc12345678"
+      static let userName1 = "Alex Test"
+      static let login2 = "matrosov.entertainment"
+      static let password2 = "abc12345678"
+      static let userName2 = "Alex Entertainment"
+    }
+  }
+  
   // MARK: Main Actions
   @IBAction func onPressedLoginAsFirstUser(sender: AnyObject)
   {
-    QIGServiceLayer.sharedInstance.chatManager.authorizeUser("matrosovtest", password: "abc12345678", userName: "Alex Test") { (error) in
-      self.performSegueWithIdentifier("QIGSegueShowNewChat", sender: nil)
+    QIGServiceLayer.sharedInstance.chatManager.authorizeUser(Constants.UserCredentional.login1,
+                                                             password: Constants.UserCredentional.password1,
+                                                             userName: Constants.UserCredentional.userName1) { (error) in
+                                                              
+      self.performSegueWithIdentifier(Constants.Segue.segueShowChats, sender: nil)
     }
   }
   
   @IBAction func onPressedLoginAsSecondUser(sender: AnyObject)
   {
-    QIGServiceLayer.sharedInstance.chatManager.authorizeUser("matrosov.entertainment", password: "abc12345678", userName: "Alex Entertainment") { (error) in
+    QIGServiceLayer.sharedInstance.chatManager.authorizeUser(Constants.UserCredentional.login2,
+                                                             password: Constants.UserCredentional.password2,
+                                                             userName: Constants.UserCredentional.userName2) { (error) in
       
     }
   }
