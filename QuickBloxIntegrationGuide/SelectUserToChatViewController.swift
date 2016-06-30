@@ -21,6 +21,7 @@ class SelectUserToChatViewController : UIViewController
   }
   
   @IBOutlet weak var usersTableView: UITableView!
+  @IBOutlet weak var unreadMessages: UILabel!
   
   var users : [QBUUser] = []
   
@@ -28,7 +29,33 @@ class SelectUserToChatViewController : UIViewController
   {
     super.viewDidLoad()
     
+    self.navigationItem.setHidesBackButton(true, animated: false)
+    
     self.updateUserList()
+  }
+  
+  override func viewWillAppear(animated: Bool)
+  {
+    super.viewWillAppear(animated)
+    updateUnreadMessagesCount()
+  }
+  
+  func updateUnreadMessagesCount()
+  {
+    QMServicesManager.instance().chatService.allDialogsWithPageLimit(UInt.max, extendedRequest: ["type":String(QBChatDialogType.Private.rawValue)], iterationBlock: { (response, dialogObjects, userIDs, stop) in
+      
+      guard let unwrappedDialogObjects = dialogObjects else {
+        return
+      }
+      
+      var totalUnreadMessageCount : UInt = 0
+      
+      for dialog in unwrappedDialogObjects {
+        totalUnreadMessageCount = totalUnreadMessageCount + dialog.unreadMessagesCount
+      }
+      
+      self.unreadMessages.text = "Unread messages count: \(totalUnreadMessageCount)"
+    })
   }
   
   func updateUserList()
@@ -71,16 +98,28 @@ class SelectUserToChatViewController : UIViewController
   // MARK: UITableViewDelegate
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
   {
-    QIGServiceLayer.sharedInstance.chatManager.createPrivateChat(Consts.Chat.chatName, users: self.users) { (response, createdDialog) in
+    QIGServiceLayer.sharedInstance.chatManager.createPrivateChat(Consts.Chat.chatName, user: self.users[indexPath.row]) { (response, createdDialog) in
       self.openNewDialog(createdDialog)
     }
   }
   
+   // QuickBlox Integration Guide. Step 6. Open QuickBlox private chat.
   func openNewDialog(dialog: QBChatDialog!)
   {
     let chatVC = ChatViewController()
     chatVC.dialog = dialog
     
     self.navigationController?.pushViewController(chatVC, animated: true)
+  }
+  
+  @IBAction func logout(sender: AnyObject)
+  {
+    if !QBChat.instance().isConnected() {
+      return
+    }
+    
+    QMServicesManager.instance().logoutWithCompletion {
+      self.navigationController?.popToRootViewControllerAnimated(true)
+    }
   }
 }

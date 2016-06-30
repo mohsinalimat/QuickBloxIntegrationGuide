@@ -63,11 +63,28 @@
                                     <action selector="onPressedLoginAsSecondUser:" destination="N9s-z0-yKd" eventType="touchUpInside" id="av7-S0-JMB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ttx-ZY-85a">
+                                <rect key="frame" x="180" y="198" width="240" height="32"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="ST9-dx-MIw"/>
+                                    <constraint firstAttribute="width" constant="240" id="eta-L0-TYw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Login as 3rd user">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPressedLoginAsThirdUser:" destination="N9s-z0-yKd" eventType="touchUpInside" id="1Ef-k9-NSy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lO0-90-NoH" firstAttribute="top" secondItem="fFV-OB-D5L" secondAttribute="bottom" constant="21" id="CRU-6q-pBn"/>
                             <constraint firstItem="fFV-OB-D5L" firstAttribute="centerX" secondItem="Mz6-BM-ywD" secondAttribute="centerX" id="IOE-kS-Xim"/>
+                            <constraint firstItem="ttx-ZY-85a" firstAttribute="top" secondItem="lO0-90-NoH" secondAttribute="bottom" constant="22" id="J1U-dV-gdu"/>
+                            <constraint firstItem="ttx-ZY-85a" firstAttribute="leading" secondItem="lO0-90-NoH" secondAttribute="leading" id="Twh-c9-VZB"/>
                             <constraint firstItem="lO0-90-NoH" firstAttribute="centerX" secondItem="Mz6-BM-ywD" secondAttribute="centerX" id="UQD-FN-IwH"/>
                             <constraint firstItem="fFV-OB-D5L" firstAttribute="top" secondItem="vkg-1I-gQ5" secondAttribute="bottom" constant="31" id="ty3-aX-vCE"/>
                         </constraints>
@@ -94,7 +111,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yt2-mo-Zie">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="169" width="600" height="431"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" id="AcS-7I-Yav">
@@ -111,18 +128,31 @@
                                     <outlet property="delegate" destination="UMO-sL-2ZM" id="ZBa-IU-vZa"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total unread messages:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4c-Jl-Bw5">
+                                <rect key="frame" x="20" y="115" width="219" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yt2-mo-Zie" firstAttribute="top" secondItem="1Oq-0T-cu5" secondAttribute="top" id="4W9-dy-Goi"/>
+                            <constraint firstItem="yt2-mo-Zie" firstAttribute="top" secondItem="1Oq-0T-cu5" secondAttribute="top" constant="169" id="4W9-dy-Goi"/>
                             <constraint firstAttribute="trailing" secondItem="yt2-mo-Zie" secondAttribute="trailing" id="TOi-60-5Jc"/>
                             <constraint firstItem="yt2-mo-Zie" firstAttribute="leading" secondItem="1Oq-0T-cu5" secondAttribute="leading" id="WYi-zP-EnV"/>
                             <constraint firstItem="NQR-bH-ANM" firstAttribute="top" secondItem="yt2-mo-Zie" secondAttribute="bottom" id="r3y-FJ-b55"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Select user" id="JS6-8f-Zn5"/>
+                    <navigationItem key="navigationItem" title="Select user" id="JS6-8f-Zn5">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Xd5-Jd-fil">
+                            <connections>
+                                <action selector="logout:" destination="UMO-sL-2ZM" id="fdG-oD-tPv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="unreadMessages" destination="V4c-Jl-Bw5" id="uDa-Vv-yh4"/>
                         <outlet property="usersTableView" destination="yt2-mo-Zie" id="CRm-6Y-DSo"/>
                     </connections>
                 </viewController>

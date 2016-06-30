@@ -13,7 +13,7 @@ protocol QIGChatManagerProtocol
   func applyChatSettings()
   func authorizeUser(login: String, password: String, userName: String, completion:((error:NSError?) -> Void)?)
   func downloadCurrentEnvironmentUsers(successBlock:(([QBUUser]?) -> Void)?, errorBlock:((NSError) -> Void)?)
-  func createPrivateChat(name: String?, users:[QBUUser], completion: ((response: QBResponse?, createdDialog: QBChatDialog?) -> Void)?)
+  func createPrivateChat(name: String?, user: QBUUser, completion: ((response: QBResponse?, createdDialog: QBChatDialog?) -> Void)?)
 }
 
 class QIGQuickBloxManager: QIGChatManagerProtocol
@@ -101,9 +101,9 @@ class QIGQuickBloxManager: QIGChatManagerProtocol
   }
   
   // QuickBlox Integration Guide. Step 5. Create QuickBlox private chat.
-  func createPrivateChat(name: String?, users:[QBUUser], completion: ((response: QBResponse?, createdDialog: QBChatDialog?) -> Void)?)
+  func createPrivateChat(name: String?, user: QBUUser, completion: ((response: QBResponse?, createdDialog: QBChatDialog?) -> Void)?)
   {
-    QMServicesManager.instance().chatService.createPrivateChatDialogWithOpponent(users.first!, completion: { (response: QBResponse?, chatDialog: QBChatDialog?) -> Void in
+    QMServicesManager.instance().chatService.createPrivateChatDialogWithOpponent(user, completion: { (response: QBResponse?, chatDialog: QBChatDialog?) -> Void in
       
       completion?(response: response, createdDialog: chatDialog)
     })
